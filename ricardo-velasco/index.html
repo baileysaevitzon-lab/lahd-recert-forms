@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LAHD Recertification — Tenant Completion Form</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background:#f1f5f9;color:#0f172a;line-height:1.45;-webkit-text-size-adjust:100%}
+.wrap{max-width:760px;margin:0 auto;padding:16px 16px 120px}
+.topbar{position:sticky;top:0;z-index:20;background:#fff;border-bottom:1px solid #e2e8f0;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.topbar-inner{max-width:760px;margin:0 auto;padding:10px 16px}
+.topbar h1{font-size:16px;margin:0;font-weight:700}
+.topbar .sub{font-size:12px;color:#64748b;margin-top:2px}
+.pbar-track{height:6px;background:#e2e8f0}
+.pbar{height:6px;background:#059669;width:0;transition:width .25s}
+.plabel{font-size:11px;color:#475569;margin-top:4px;font-variant-numeric:tabular-nums}
+.banner{border:1px solid #c4b5fd;background:#f5f3ff;color:#5b21b6;border-radius:8px;padding:12px 14px;font-size:13px;margin:14px 0}
+.banner strong{color:#4c1d95}
+.card{background:#fff;border:1px solid #e2e8f0;border-radius:10px;padding:16px;margin:14px 0}
+.section-title{font-size:17px;font-weight:700;margin:0 0 4px}
+.section-desc{font-size:12.5px;color:#64748b;margin:0 0 12px}
+.fields{display:flex;flex-direction:column;gap:14px}
+.field{border:1px solid #e2e8f0;background:#f8fafc;border-radius:8px;padding:12px}
+.field-child{margin-left:14px;border-left:3px solid #6ee7b7;background:#f0fdf4}
+.field-label{display:block;font-size:14px;font-weight:600;margin-bottom:6px}
+.req{color:#e11d48;margin-left:3px}
+.field-context{font-size:12px;color:#64748b;margin:0 0 8px}
+.fld,.fld-area,.fld-select{width:100%;padding:11px 12px;border:1px solid #cbd5e1;border-radius:8px;font-size:16px;background:#fff;color:#0f172a}
+.fld:focus,.fld-area:focus,.fld-select:focus{outline:2px solid #93c5fd;border-color:#3b82f6}
+.fld.initial{max-width:140px;text-transform:uppercase;letter-spacing:.18em;text-align:center;font-weight:700}
+.fld-area{resize:vertical;min-height:74px}
+.seg{display:flex;gap:8px}
+.seg-btn{flex:1;padding:12px;border:1px solid #cbd5e1;background:#fff;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;color:#334155}
+.seg-btn.active{background:#047857;border-color:#047857;color:#fff}
+.cbx{display:inline-flex;align-items:center;gap:8px;font-size:14px;cursor:pointer}
+.cbx input{width:20px;height:20px}
+.sigwrap{display:flex;flex-direction:column;gap:8px}
+.sigpad{width:100%;height:150px;border:2px dashed #94a3b8;border-radius:8px;background:#fff;touch-action:none;cursor:crosshair}
+.sigrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sig-clear{padding:7px 12px;border:1px solid #cbd5e1;background:#fff;border-radius:7px;font-size:13px;cursor:pointer}
+.sig-note{font-size:11.5px;color:#64748b}
+.hidden{display:none !important}
+.missing-flag{outline:2px solid #f43f5e;outline-offset:2px}
+.footer-bar{position:fixed;left:0;right:0;bottom:0;background:#fff;border-top:1px solid #e2e8f0;box-shadow:0 -2px 8px rgba(0,0,0,.06);padding:12px 16px;z-index:25}
+.footer-inner{max-width:760px;margin:0 auto;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.btn-primary{flex:1;min-width:200px;padding:14px;background:#0f172a;color:#fff;border:none;border-radius:9px;font-size:15px;font-weight:700;cursor:pointer}
+.btn-primary:hover{background:#1e293b}
+#save-state{font-size:12px;color:#475569}
+.legal{font-size:11px;color:#94a3b8;margin:18px 4px 0;line-height:1.5}
+.gmail-warn{border:2px solid #f59e0b;background:#fef3c7;border-radius:8px;padding:12px 14px;font-size:13px;margin:0 0 14px;color:#78350f}
+.gmail-warn strong{display:block;font-size:14px;font-weight:700;margin-bottom:4px}
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-inner">
+    <h1>LAHD Recertification — Tenant Completion Form</h1>
+    <div class="sub">Baxter Hollywood (1818 N Cherokee)</div>
+    <div class="plabel" id="plabel">0 required fields complete</div>
+  </div>
+  <div class="pbar-track"><div class="pbar" id="pbar"></div></div>
+</div>
+
+<div class="wrap">
+  <div class="gmail-warn">
+    <strong>&#x26A0; Seeing code or scrambled text?</strong>
+    Your email app may be showing the raw file instead of the form.
+    Please <strong>save this attachment to your device</strong>, then open it in Chrome, Safari, or Firefox.
+    The form works fully offline once open &#x2014; no internet needed.
+  </div>
+  <div class="banner">
+    <strong>How this works.</strong> Fill out the form below on your own device &#x2014; no internet needed.
+    When you are done, tap <strong>Download my filled form</strong> at the bottom and email the saved
+    file back to your property manager. Your answers stay on your device until you send the file.
+  </div>
+
+  <section class="card">
+    <h2 class="section-title">Your Information</h2>
+    <p class="section-desc">Please fill in your details. These identify your completed form when you email it back.</p>
+    <div class="fields">
+      <div class="field" data-field="_identity_name" data-type="text" data-page="0" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="">
+        <label class="field-label">Full legal name<span class="req" title="Required">*</span></label>
+        <input class="fld" type="text" value="" placeholder="As it appears on your ID">
+      </div>
+      <div class="field" data-field="_identity_unit" data-type="text" data-page="0" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="">
+        <label class="field-label">Unit number<span class="req" title="Required">*</span></label>
+        <input class="fld" type="text" value="" placeholder="e.g. 502">
+      </div>
+      <div class="field" data-field="_identity_email" data-type="text" data-page="0" data-required="0" data-required-visible="0" data-clears="0" data-parent="" data-trigger="">
+        <label class="field-label">Email address <span style="font-weight:400;color:#64748b">(optional)</span></label>
+        <input class="fld" type="email" value="" placeholder="your@email.com">
+      </div>
+      <div class="field" data-field="_identity_phone" data-type="text" data-page="0" data-required="0" data-required-visible="0" data-clears="0" data-parent="" data-trigger="">
+        <label class="field-label">Phone number <span style="font-weight:400;color:#64748b">(optional)</span></label>
+        <input class="fld" type="tel" value="" placeholder="(555) 555-5555">
+      </div>
+      <div class="field" data-field="_identity_date" data-type="date" data-page="0" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="">
+        <label class="field-label">Today&#x27;s date<span class="req" title="Required">*</span></label>
+        <input class="fld" type="date" value="">
+      </div>
+    </div>
+  </section>
+
+  <section class="card"><h2 class="section-title">1. Identity confirmation</h2><p class="section-desc">Confirm your information before signing.</p><div class="fields"><div class="field" data-field="11-HouseholdMemberName" data-type="name" data-page="11" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger=""><label class="field-label">Your full legal name<span class="req" title="Required">*</span></label><p class="field-context">Exactly as on government-issued ID. Used to render your typed cursive signature.</p><input class="fld" type="text" value="" placeholder="Full legal name"></div><div class="field" data-field="11-HouseholdMemberDate" data-type="date" data-page="11" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger=""><label class="field-label">Today's date<span class="req" title="Required">*</span></label><input class="fld" type="date" value=""></div></div></section><section class="card"><h2 class="section-title">2. Initials</h2><p class="section-desc">Type your initials once. They will appear next to each statement on page 11 of the LAHD packet.</p><div class="fields"><div class="field" data-field="11-Initial1" data-type="initial" data-page="11" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger=""><label class="field-label">Your initials<span class="req" title="Required">*</span></label><p class="field-context">Auto-applied to all 7 applicant-statement initial boxes.</p><input class="fld initial" type="text" maxlength="6" value="" placeholder="e.g. JD"></div></div></section><section class="card"><h2 class="section-title">3. Signature</h2><p class="section-desc">Your typed name renders as a cursive signature and appears in the Applicant Statement (page 11) and Conflict of Interest (page 16) signature boxes.</p><div class="fields"><div class="field" data-field="11-HouseholdMemberSignature" data-type="signature" data-page="11" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger=""><label class="field-label">Signature (typed cursive)<span class="req" title="Required">*</span></label><p class="field-context">Renders in cursive. Required before submission.</p><div class="sigwrap"><canvas class="sigpad" width="600" height="150"></canvas><div class="sigrow"><button type="button" class="sig-clear">Clear signature</button><span class="sig-note">Draw your signature with your mouse or finger.</span></div><input type="hidden" class="sig-data" value=""></div></div></div></section><section class="card"><h2 class="section-title">4. Conflict of Interest acknowledgement</h2><p class="section-desc">Confirm your relationship to the owner / property manager.</p><div class="fields"><div class="field" data-field="16-HHMbrName" data-type="name" data-page="16" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger=""><label class="field-label">Your name (Conflict of Interest)<span class="req" title="Required">*</span></label><input class="fld" type="text" value="" placeholder="Full legal name"></div><div class="field" data-field="16-HHMbrDate" data-type="date" data-page="16" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger=""><label class="field-label">Today's date (Conflict of Interest)<span class="req" title="Required">*</span></label><input class="fld" type="date" value=""></div></div></section><section class="card"><h2 class="section-title">5. Income questions (TICQ)</h2><p class="section-desc">Answer Yes if anyone in your household receives the income type listed. If you answer Yes, additional fields appear so you can list the payer and monthly amount.</p><div class="fields"><div class="field" data-field="12-1Y" data-type="yesno" data-page="12" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="12-1Y" data-resolver-no="12-1N"><label class="field-label">Do you have employment income (wages, salary, hourly)?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="12-1Info" data-type="text" data-page="12" data-required="0" data-required-visible="1" data-clears="1" data-parent="12-1Y" data-trigger="yes"><label class="field-label">Employer name<span class="req" title="Required">*</span></label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="12-1Monthly" data-type="amount" data-page="12" data-required="0" data-required-visible="1" data-clears="1" data-parent="12-1Y" data-trigger="yes"><label class="field-label">Monthly gross amount (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field" data-field="12-2Y" data-type="yesno" data-page="12" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="12-2Y" data-resolver-no="12-2N"><label class="field-label">Self-employment, freelance, or 1099 income?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="12-2Info1" data-type="text" data-page="12" data-required="0" data-required-visible="1" data-clears="1" data-parent="12-2Y" data-trigger="yes"><label class="field-label">Nature of self-employment<span class="req" title="Required">*</span></label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="12-2Monthly1" data-type="amount" data-page="12" data-required="0" data-required-visible="1" data-clears="1" data-parent="12-2Y" data-trigger="yes"><label class="field-label">Monthly gross amount (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field field-child hidden" data-field="12-2Info2" data-type="text" data-page="12" data-required="0" data-required-visible="0" data-clears="1" data-parent="12-2Y" data-trigger="yes"><label class="field-label">Nature of self-employment (additional source 1) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="12-2Monthly2" data-type="amount" data-page="12" data-required="0" data-required-visible="0" data-clears="1" data-parent="12-2Y" data-trigger="yes"><label class="field-label">Monthly gross amount (additional source 1) — optional</label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field field-child hidden" data-field="12-2Info3" data-type="text" data-page="12" data-required="0" data-required-visible="0" data-clears="1" data-parent="12-2Y" data-trigger="yes"><label class="field-label">Nature of self-employment (additional source 2) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="12-2Monthly3" data-type="amount" data-page="12" data-required="0" data-required-visible="0" data-clears="1" data-parent="12-2Y" data-trigger="yes"><label class="field-label">Monthly gross amount (additional source 2) — optional</label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field" data-field="12-3Y" data-type="yesno" data-page="12" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="12-3Y" data-resolver-no="12-3N"><label class="field-label">Business income or partnership distributions?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="12-3Monthly" data-type="amount" data-page="12" data-required="0" data-required-visible="1" data-clears="1" data-parent="12-3Y" data-trigger="yes"><label class="field-label">Monthly gross amount (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field" data-field="12-4Y" data-type="yesno" data-page="12" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="12-4Y" data-resolver-no="12-4N"><label class="field-label">Social Security or SSI benefits?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="12-4Monthly" data-type="amount" data-page="12" data-required="0" data-required-visible="1" data-clears="1" data-parent="12-4Y" data-trigger="yes"><label class="field-label">Monthly gross amount (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field" data-field="12-5Y" data-type="yesno" data-page="12" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="12-5Y" data-resolver-no="12-5N"><label class="field-label">Unemployment / EDD payments?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="12-5Monthly" data-type="amount" data-page="12" data-required="0" data-required-visible="1" data-clears="1" data-parent="12-5Y" data-trigger="yes"><label class="field-label">Monthly gross amount (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field" data-field="12-6Y" data-type="yesno" data-page="12" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="12-6Y" data-resolver-no="12-6N"><label class="field-label">Child support or alimony received?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="12-6Monthly" data-type="amount" data-page="12" data-required="0" data-required-visible="1" data-clears="1" data-parent="12-6Y" data-trigger="yes"><label class="field-label">Monthly gross amount (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field" data-field="12-7Y" data-type="yesno" data-page="12" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="12-7Y" data-resolver-no="12-7N"><label class="field-label">Pension or retirement income?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="12-7Monthly" data-type="amount" data-page="12" data-required="0" data-required-visible="1" data-clears="1" data-parent="12-7Y" data-trigger="yes"><label class="field-label">Monthly gross amount (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field" data-field="12-8Y" data-type="yesno" data-page="12" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="12-8Y" data-resolver-no="12-8N"><label class="field-label">Disability or workers' comp benefits?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="12-8Monthly" data-type="amount" data-page="12" data-required="0" data-required-visible="1" data-clears="1" data-parent="12-8Y" data-trigger="yes"><label class="field-label">Monthly gross amount (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div></div></section><section class="card"><h2 class="section-title">6. Asset questions (TICQ)</h2><p class="section-desc">Answer Yes if you have the asset type. If you answer Yes, fields appear so you can list each account / asset. We will request a recent statement for each Yes answer.</p><div class="fields"><div class="field" data-field="14-18Y" data-type="yesno" data-page="14" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="14-18Y" data-resolver-no="14-18N"><label class="field-label">Do you have any checking accounts?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="14-18Info1" data-type="text" data-page="14" data-required="0" data-required-visible="1" data-clears="1" data-parent="14-18Y" data-trigger="yes"><label class="field-label">Financial institution<span class="req" title="Required">*</span></label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="14-18Value1" data-type="amount" data-page="14" data-required="0" data-required-visible="1" data-clears="1" data-parent="14-18Y" data-trigger="yes"><label class="field-label">Current balance (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field field-child hidden" data-field="14-18Interest1" data-type="text" data-page="14" data-required="0" data-required-visible="0" data-clears="1" data-parent="14-18Y" data-trigger="yes"><label class="field-label">Interest rate (%) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="14-18Info2" data-type="text" data-page="14" data-required="0" data-required-visible="0" data-clears="1" data-parent="14-18Y" data-trigger="yes"><label class="field-label">Financial institution (additional account) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="14-18Value2" data-type="amount" data-page="14" data-required="0" data-required-visible="0" data-clears="1" data-parent="14-18Y" data-trigger="yes"><label class="field-label">Current balance (additional account, USD) — optional</label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field field-child hidden" data-field="14-18Interest2" data-type="text" data-page="14" data-required="0" data-required-visible="0" data-clears="1" data-parent="14-18Y" data-trigger="yes"><label class="field-label">Interest rate (%) (additional account) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field" data-field="14-19Y" data-type="yesno" data-page="14" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="14-19Y" data-resolver-no="14-19N"><label class="field-label">Do you have any savings accounts?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="14-19Info1" data-type="text" data-page="14" data-required="0" data-required-visible="1" data-clears="1" data-parent="14-19Y" data-trigger="yes"><label class="field-label">Financial institution<span class="req" title="Required">*</span></label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="14-19Value1" data-type="amount" data-page="14" data-required="0" data-required-visible="1" data-clears="1" data-parent="14-19Y" data-trigger="yes"><label class="field-label">Current balance (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field field-child hidden" data-field="14-19Interest1" data-type="text" data-page="14" data-required="0" data-required-visible="0" data-clears="1" data-parent="14-19Y" data-trigger="yes"><label class="field-label">Interest rate (%) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="14-19Info2" data-type="text" data-page="14" data-required="0" data-required-visible="0" data-clears="1" data-parent="14-19Y" data-trigger="yes"><label class="field-label">Financial institution (additional account) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="14-19Value2" data-type="amount" data-page="14" data-required="0" data-required-visible="0" data-clears="1" data-parent="14-19Y" data-trigger="yes"><label class="field-label">Current balance (additional account, USD) — optional</label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field field-child hidden" data-field="14-19Interest2" data-type="text" data-page="14" data-required="0" data-required-visible="0" data-clears="1" data-parent="14-19Y" data-trigger="yes"><label class="field-label">Interest rate (%) (additional account) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field" data-field="14-20Y" data-type="yesno" data-page="14" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="14-20Y" data-resolver-no="14-20N"><label class="field-label">Cash on hand or money kept at home?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="14-20Value" data-type="amount" data-page="14" data-required="0" data-required-visible="1" data-clears="1" data-parent="14-20Y" data-trigger="yes"><label class="field-label">Amount (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field" data-field="14-21Y" data-type="yesno" data-page="14" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="14-21Y" data-resolver-no="14-21N"><label class="field-label">Investment accounts (stocks, bonds, CDs, mutual funds)?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="14-21Info1" data-type="text" data-page="14" data-required="0" data-required-visible="1" data-clears="1" data-parent="14-21Y" data-trigger="yes"><label class="field-label">Brokerage / institution<span class="req" title="Required">*</span></label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="14-21Value1" data-type="amount" data-page="14" data-required="0" data-required-visible="1" data-clears="1" data-parent="14-21Y" data-trigger="yes"><label class="field-label">Current value (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field field-child hidden" data-field="14-21Info2" data-type="text" data-page="14" data-required="0" data-required-visible="0" data-clears="1" data-parent="14-21Y" data-trigger="yes"><label class="field-label">Brokerage / institution (additional account) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="14-21Value2" data-type="amount" data-page="14" data-required="0" data-required-visible="0" data-clears="1" data-parent="14-21Y" data-trigger="yes"><label class="field-label">Current value (additional account, USD) — optional</label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field" data-field="15-25Y" data-type="yesno" data-page="15" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="15-25Y" data-resolver-no="15-25N"><label class="field-label">Real estate you own (other than this unit)?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="15-25Info1" data-type="text" data-page="15" data-required="0" data-required-visible="1" data-clears="1" data-parent="15-25Y" data-trigger="yes"><label class="field-label">Property description<span class="req" title="Required">*</span></label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="15-25Value1" data-type="amount" data-page="15" data-required="0" data-required-visible="1" data-clears="1" data-parent="15-25Y" data-trigger="yes"><label class="field-label">Current market value (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field field-child hidden" data-field="15-25Interest1" data-type="text" data-page="15" data-required="0" data-required-visible="0" data-clears="1" data-parent="15-25Y" data-trigger="yes"><label class="field-label">Interest rate (%) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="15-25Info2" data-type="text" data-page="15" data-required="0" data-required-visible="0" data-clears="1" data-parent="15-25Y" data-trigger="yes"><label class="field-label">Property description (additional account) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="15-25Value2" data-type="amount" data-page="15" data-required="0" data-required-visible="0" data-clears="1" data-parent="15-25Y" data-trigger="yes"><label class="field-label">Current market value (additional account, USD) — optional</label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field field-child hidden" data-field="15-25Interest2" data-type="text" data-page="15" data-required="0" data-required-visible="0" data-clears="1" data-parent="15-25Y" data-trigger="yes"><label class="field-label">Interest rate (%) (additional account) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field" data-field="15-26Y" data-type="yesno" data-page="15" data-required="1" data-required-visible="0" data-clears="0" data-parent="" data-trigger="" data-resolver-yes="15-26Y" data-resolver-no="15-26N"><label class="field-label">Trust funds, life insurance with cash value, or other assets?<span class="req" title="Required">*</span></label><div class="seg"><button type="button" class="seg-btn" data-opt="yes">Yes</button><button type="button" class="seg-btn" data-opt="no">No</button></div><input type="hidden" class="seg-value" value=""></div><div class="field field-child hidden" data-field="15-26Info1" data-type="text" data-page="15" data-required="0" data-required-visible="1" data-clears="1" data-parent="15-26Y" data-trigger="yes"><label class="field-label">Description of asset<span class="req" title="Required">*</span></label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="15-26Value1" data-type="amount" data-page="15" data-required="0" data-required-visible="1" data-clears="1" data-parent="15-26Y" data-trigger="yes"><label class="field-label">Cash value (USD)<span class="req" title="Required">*</span></label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field field-child hidden" data-field="15-26Interest1" data-type="text" data-page="15" data-required="0" data-required-visible="0" data-clears="1" data-parent="15-26Y" data-trigger="yes"><label class="field-label">Interest rate (%) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="15-26Info2" data-type="text" data-page="15" data-required="0" data-required-visible="0" data-clears="1" data-parent="15-26Y" data-trigger="yes"><label class="field-label">Description of asset (additional account) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div><div class="field field-child hidden" data-field="15-26Value2" data-type="amount" data-page="15" data-required="0" data-required-visible="0" data-clears="1" data-parent="15-26Y" data-trigger="yes"><label class="field-label">Cash value (additional account, USD) — optional</label><input class="fld" type="number" inputmode="decimal" step="0.01" min="0" value="" placeholder="$ amount"></div><div class="field field-child hidden" data-field="15-26Interest2" data-type="text" data-page="15" data-required="0" data-required-visible="0" data-clears="1" data-parent="15-26Y" data-trigger="yes"><label class="field-label">Interest rate (%) (additional account) — optional</label><input class="fld" type="text" value="" placeholder="Type here"></div></div></section><section class="card"><h2 class="section-title">7. Additional information</h2><p class="section-desc">Anything else BaxterOps or Urban Futures should know. Optional.</p><div class="fields"><div class="field" data-field="rov_tenant_explanation" data-type="longtext" data-page="24" data-required="0" data-required-visible="0" data-clears="0" data-parent="" data-trigger=""><label class="field-label">Tenant notes / clarifications</label><textarea class="fld-area" rows="3" placeholder="Optional"></textarea></div></div></section>
+
+  <p class="legal">
+    This form collects information for your LAHD affordable-housing recertification. Your property
+    manager will review every answer. Drawing your signature here authorizes it to be placed on your
+    recertification packet. This is not legal advice.
+  </p>
+</div>
+
+<div class="footer-bar">
+  <div class="footer-inner">
+    <span id="save-state">Not yet saved.</span>
+    <button type="button" class="btn-primary" id="download-btn">Download my filled form &darr;</button>
+  </div>
+</div>
+
+<script type="application/json" id="recert-tenant-payload">{
+  "caseId": "",
+  "templateId": "lahd-recert-2026",
+  "role": "tenant",
+  "complete": false,
+  "savedAt": null,
+  "answers": {}
+}</script>
+<script>window.__RECERT_META__ = {
+  "caseId": "",
+  "templateId": "lahd-recert-2026",
+  "role": "tenant",
+  "propertyName": "Baxter Hollywood (1818 N Cherokee)"
+};</script>
+<script>
+(function(){
+  "use strict";
+  var META = window.__RECERT_META__ || {};
+  function all(sel, root){ return Array.prototype.slice.call((root||document).querySelectorAll(sel)); }
+  var wraps = all("[data-field]");
+  var byName = {};
+  wraps.forEach(function(w){ byName[w.getAttribute("data-field")] = w; });
+
+  function getVal(w){
+    var t = w.getAttribute("data-type");
+    if (t === "yesno" || t === "tristate"){ var h = w.querySelector("input.seg-value"); return h ? h.value : ""; }
+    if (t === "checkbox"){ var c = w.querySelector("input[type=checkbox]"); return c && c.checked ? "true" : "false"; }
+    if (t === "select"){ var s = w.querySelector("select"); return s ? s.value : ""; }
+    if (t === "longtext"){ var a = w.querySelector("textarea"); return a ? a.value : ""; }
+    if (t === "signature"){ var d = w.querySelector("input.sig-data"); return d ? d.value : ""; }
+    var i = w.querySelector("input.fld"); return i ? i.value : "";
+  }
+  function setSeg(w, val){
+    var h = w.querySelector("input.seg-value"); if (h) h.value = val || "";
+    all(".seg-btn", w).forEach(function(b){
+      if (b.getAttribute("data-opt") === val) b.classList.add("active"); else b.classList.remove("active");
+    });
+  }
+  function setVal(w, val){
+    var t = w.getAttribute("data-type");
+    if (t === "yesno" || t === "tristate"){ setSeg(w, val); return; }
+    if (t === "checkbox"){ var c = w.querySelector("input[type=checkbox]"); if (c) c.checked = (val === "true" || val === "1" || val === "yes"); return; }
+    if (t === "select"){ var s = w.querySelector("select"); if (s) s.value = val || ""; return; }
+    if (t === "longtext"){ var a = w.querySelector("textarea"); if (a) a.value = val || ""; return; }
+    if (t === "signature"){ var d = w.querySelector("input.sig-data"); if (d) d.value = val || ""; drawSig(w, val); return; }
+    var i = w.querySelector("input.fld"); if (i) i.value = val || "";
+  }
+
+  function drawSig(w, data){
+    var canvas = w.querySelector("canvas.sigpad"); if (!canvas) return;
+    var ctx = canvas.getContext("2d"); ctx.clearRect(0,0,canvas.width,canvas.height);
+    if (!data || data.indexOf("data:image") !== 0) return;
+    var img = new Image();
+    img.onload = function(){ ctx.drawImage(img, 0, 0, canvas.width, canvas.height); };
+    img.src = data;
+  }
+  function initSig(w){
+    var canvas = w.querySelector("canvas.sigpad");
+    var hidden = w.querySelector("input.sig-data");
+    var clearBtn = w.querySelector(".sig-clear");
+    if (!canvas) return;
+    var ctx = canvas.getContext("2d");
+    ctx.lineWidth = 2.4; ctx.lineCap = "round"; ctx.lineJoin = "round"; ctx.strokeStyle = "#0f172a";
+    var drawing = false, last = null, dirty = false;
+    function pos(e){
+      var r = canvas.getBoundingClientRect();
+      var t = (e.touches && e.touches[0]) ? e.touches[0] : e;
+      return { x: (t.clientX - r.left) * (canvas.width / r.width), y: (t.clientY - r.top) * (canvas.height / r.height) };
+    }
+    function start(e){ drawing = true; last = pos(e); if (e.cancelable) e.preventDefault(); }
+    function move(e){
+      if (!drawing) return; var p = pos(e);
+      ctx.beginPath(); ctx.moveTo(last.x, last.y); ctx.lineTo(p.x, p.y); ctx.stroke();
+      last = p; dirty = true; if (e.cancelable) e.preventDefault();
+    }
+    function end(){ if (!drawing) return; drawing = false; if (dirty){ hidden.value = canvas.toDataURL("image/png"); onChange(); } }
+    canvas.addEventListener("mousedown", start);
+    canvas.addEventListener("mousemove", move);
+    window.addEventListener("mouseup", end);
+    canvas.addEventListener("touchstart", start, {passive:false});
+    canvas.addEventListener("touchmove", move, {passive:false});
+    canvas.addEventListener("touchend", end);
+    if (clearBtn) clearBtn.addEventListener("click", function(){ ctx.clearRect(0,0,canvas.width,canvas.height); hidden.value = ""; onChange(); });
+  }
+
+  function refreshVisibility(){
+    wraps.forEach(function(w){
+      var parent = w.getAttribute("data-parent"); if (!parent) return;
+      var trigger = w.getAttribute("data-trigger");
+      var pw = byName[parent]; var pv = pw ? getVal(pw) : "";
+      if (pv === trigger){ w.classList.remove("hidden"); }
+      else { w.classList.add("hidden"); if (w.getAttribute("data-clears") === "1" && getVal(w) !== "") setVal(w, ""); }
+    });
+  }
+  function updateProgress(){
+    var total = 0, done = 0;
+    wraps.forEach(function(w){
+      if (w.classList.contains("hidden")) return;
+      var req = w.getAttribute("data-required") === "1" || w.getAttribute("data-required-visible") === "1";
+      if (!req) return; total++;
+      if (getVal(w) !== "") done++;
+    });
+    var pct = total === 0 ? 100 : Math.round(done / total * 100);
+    var bar = document.getElementById("pbar"); if (bar) bar.style.width = pct + "%";
+    var lbl = document.getElementById("plabel"); if (lbl) lbl.textContent = done + " of " + total + " required fields complete (" + pct + "%)";
+  }
+  function onChange(){ refreshVisibility(); updateProgress(); }
+
+  function collect(){
+    var answers = {}; var missing = [];
+    wraps.forEach(function(w){
+      if (w.classList.contains("hidden")) return;
+      var name = w.getAttribute("data-field");
+      var val = getVal(w);
+      var req = w.getAttribute("data-required") === "1" || w.getAttribute("data-required-visible") === "1";
+      if (req && val === "") missing.push(w);
+      if (val !== ""){
+        var y = w.getAttribute("data-resolver-yes"); var n = w.getAttribute("data-resolver-no");
+        var pair = (y || n) ? { yes: y || null, no: n || null } : null;
+        answers[name] = {
+          value: val,
+          fieldType: w.getAttribute("data-type"),
+          pageNumber: parseInt(w.getAttribute("data-page"), 10) || 0,
+          parentFieldName: w.getAttribute("data-parent") || null,
+          parentTriggerValue: w.getAttribute("data-trigger") || null,
+          resolverPair: pair,
+          isSignature: w.getAttribute("data-type") === "signature"
+        };
+      }
+    });
+    return { answers: answers, missing: missing };
+  }
+
+  function download(){
+    all(".missing-flag").forEach(function(e){ e.classList.remove("missing-flag"); });
+    var res = collect();
+    var complete = res.missing.length === 0;
+    if (!complete){
+      res.missing.forEach(function(w){ w.classList.add("missing-flag"); });
+      var ok = window.confirm(res.missing.length + " required field(s) are still empty. Save as a DRAFT anyway? You can reopen this file later, finish it, and download again.");
+      if (!ok){ if (res.missing[0]) res.missing[0].scrollIntoView({behavior:"smooth", block:"center"}); return; }
+    }
+    var payload = { caseId: META.caseId, templateId: META.templateId, role: META.role, complete: complete, savedAt: new Date().toISOString(), answers: res.answers };
+    var scriptEl = document.getElementById("recert-tenant-payload");
+    scriptEl.textContent = JSON.stringify(payload, null, 2).replace(/</g, "\\u003c");
+    var statusEl = document.getElementById("save-state");
+    if (statusEl) statusEl.textContent = complete ? "\u2713 Completed \u2014 email this file back to your property manager." : "Draft saved \u2014 some required fields are still empty.";
+    var html = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+    var blob = new Blob([html], {type: "text/html;charset=utf-8"});
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement("a"); a.href = url;
+    var nameW = byName["_identity_name"]; var nameV = nameW ? getVal(nameW) : "";
+    var unitW = byName["_identity_unit"]; var unitV = unitW ? getVal(unitW) : "";
+    var safeName = nameV.replace(/[^a-z0-9]+/gi, "_").replace(/^_+|_+$/, "") || "";
+    var safeUnit = unitV.replace(/[^a-z0-9]+/gi, "_").replace(/^_+|_+$/, "") || "";
+    var suffix = complete ? "_COMPLETED" : "_DRAFT";
+    var fn = (safeName && safeUnit) ? ("LAHD_Recert_" + safeName + "_Unit_" + safeUnit + suffix + ".html")
+           : safeName ? ("LAHD_Recert_" + safeName + suffix + ".html")
+           : ("LAHD_Recertification" + suffix + ".html");
+    a.download = fn;
+    document.body.appendChild(a); a.click(); document.body.removeChild(a);
+    setTimeout(function(){ URL.revokeObjectURL(url); }, 1500);
+  }
+
+  function wire(){
+    wraps.forEach(function(w){
+      var t = w.getAttribute("data-type");
+      if (t === "yesno" || t === "tristate"){
+        all(".seg-btn", w).forEach(function(b){
+          b.addEventListener("click", function(){ setSeg(w, b.getAttribute("data-opt")); onChange(); });
+        });
+        setSeg(w, getVal(w));
+      } else if (t === "signature"){ initSig(w); }
+      else if (t === "checkbox"){ var c = w.querySelector("input[type=checkbox]"); if (c) c.addEventListener("change", onChange); }
+      else if (t === "select"){ var s = w.querySelector("select"); if (s) s.addEventListener("change", onChange); }
+      else if (t === "longtext"){ var a = w.querySelector("textarea"); if (a) a.addEventListener("input", onChange); }
+      else {
+        var i = w.querySelector("input.fld");
+        if (i){
+          if (t === "initial") i.addEventListener("input", function(){ var p = i.selectionStart; i.value = i.value.toUpperCase(); try { i.setSelectionRange(p, p); } catch(e){} });
+          i.addEventListener("input", onChange);
+          i.addEventListener("change", onChange);
+        }
+      }
+    });
+    var dl = document.getElementById("download-btn"); if (dl) dl.addEventListener("click", download);
+  }
+
+  function hydrate(){
+    var scriptEl = document.getElementById("recert-tenant-payload"); var data = null;
+    try { data = JSON.parse(scriptEl.textContent || "{}"); } catch(e){ data = null; }
+    if (data && data.answers){
+      Object.keys(data.answers).forEach(function(name){
+        var w = byName[name]; if (!w) return;
+        var a = data.answers[name];
+        setVal(w, (a && typeof a === "object") ? a.value : a);
+      });
+    }
+    refreshVisibility(); updateProgress();
+  }
+
+  wire(); hydrate();
+})();
+</script>
+</body>
+</html>
